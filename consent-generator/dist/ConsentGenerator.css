@@ -1,0 +1,17 @@
+@import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import "../../node_modules/react-json-pretty/src/JSONPretty.monikai.css";
+
+.simple-form-group {
+  margin-bottom: 1rem;
+}
+.simple-text-label {
+  display: block;
+  color: red;
+}
+.simple-text-input {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(33, 37, 41);
+}

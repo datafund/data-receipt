@@ -1,0 +1,83 @@
+@import url(~bootstrap/dist/css/bootstrap.min.css);
+@import url(../../node_modules/react-json-pretty/src/JSONPretty.monikai.css);
+@import url(../../node_modules/jsoneditor-react/es/editor.min.css);
+@import "https://use.fontawesome.com/releases/v5.8.1/css/all.css";
+@import url(../../node_modules/lunchtype.css/Lunchtype22/Web/stylesheet.css);
+@font-face {
+  font-family: "Graphik Regular";
+  src: url("../fonts/Graphik-Regular.otf");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Graphik Regular";
+  src: url("../fonts/Graphik-Light.otf");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Graphik Regular";
+  src: url("../fonts/Graphik-Medium.otf");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Graphik Regular";
+  src: url("../fonts/Graphik-Bold.otf");
+  font-weight: 700;
+  font-style: normal; }
+
+html {
+  background: #ffffff url("../images/bg.jpg") center no-repeat;
+  background-size: cover; }
+
+body {
+  font-family: "Graphik Regular", sans-serif !important;
+  background: none; }
+
+h1, h2, h3, h4, h5, legend {
+  font-family: "lunchtype22regular"; }
+
+.btn {
+  font-family: "lunchtype22regular";
+  border-radius: 1.5rem;
+  padding: 0.5rem 1rem 0.3rem 1rem;
+  cursor: pointer; }
+  .btn.btn-primary {
+    background: none !important;
+    color: #0000ff !important;
+    border: 2px solid #0000ff !important; }
+    .btn.btn-primary:hover {
+      background: #0000ff !important;
+      color: #ffffff !important; }
+
+.navbar {
+  background: rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(138, 138, 138, 0.51);
+  min-height: 66px; }
+  .navbar a {
+    font-family: "Graphik Regular"; }
+    .navbar a.active {
+      font-weight: bold; }
+
+.navbar-brand img {
+  max-width: 150px;
+  width: 150px;
+  height: auto; }
+
+.mainContent {
+  margin-top: 60px; }
+
+.list-group-item-heading {
+  cursor: pointer; }
+
+.disabled list-group-item {
+  cursor: not-allowed !important; }
+
+.jsonViewer {
+  overflow: hidden;
+  overflow-x: auto; }
+  .jsonViewer table tr td {
+    padding: 8px 0px; }
+  .jsonViewer table td:last-of-type {
+    hyphens: auto; }

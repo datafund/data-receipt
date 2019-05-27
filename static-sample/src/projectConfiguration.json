@@ -1,0 +1,336 @@
+{
+  "schema" : {
+    "title": "Consent receipt",
+    "type": "object",
+    "required": [
+      "version",
+      "jurisdiction",
+      "consentTimestamp",
+      "collectionMethod",
+      "consentReceiptID",
+      "piiPrincipalId",
+      "piiControllers",
+      "services",
+      "policyUrl",
+      "sensitive",
+      "spiCat"
+    ],
+    "properties": {
+      "version": {
+        "type": "string"
+      },
+      "jurisdiction": {
+        "type": "string"
+      },
+      "consentTimestamp": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "collectionMethod": {
+        "type": "string"
+      },
+      "consentReceiptID": {
+        "type": "string"
+      },
+      "publicKey": {
+        "type": "string"
+      },
+      "language": {
+        "type": "string"
+      },
+      "piiPrincipalId": {
+        "type": "string"
+      },
+      "piiControllers": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "piiController": {
+              "type": "string"
+            },
+            "onBehalf": {
+              "type": "boolean"
+            },
+            "contact": {
+              "type": "string"
+            },
+            "address": {
+              "type": "object"
+            },
+            "email": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "piiControllerUrl": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "piiController",
+            "contact",
+            "address",
+            "email",
+            "phone"
+          ]
+        }
+      },
+      "policyUrl": {
+        "type": "string"
+      },
+      "services": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "service": {
+              "type": "string"
+            },
+            "purposes": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "purpose": {
+                    "type": "string"
+                  },
+                  "consentType": {
+                    "type": "string"
+                  },
+                  "purposeCategory": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "piiCategory": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "primaryPurpose": {
+                    "type": "boolean"
+                  },
+                  "termination": {
+                    "type": "string"
+                  }
+                },
+                "oneOf": [
+                  {
+                    "properties": {
+                      "thirdPartyDisclosure": {
+                        "type": "boolean",
+                        "enum": [
+                          false
+                        ]
+                      }
+                    },
+                    "required": [
+                      "thirdPartyDisclosure"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "thirdPartyDisclosure": {
+                        "type": "boolean",
+                        "enum": [
+                          true
+                        ]
+                      },
+                      "thirdPartyName": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "thirdPartyDisclosure",
+                      "thirdPartyName"
+                    ]
+                  }
+                ],
+                "required": [
+                  "consentType",
+                  "purposeCategory",
+                  "piiCategory",
+                  "termination",
+                  "thirdPartyDisclosure"
+                ]
+              }
+            }
+          },
+          "required": [
+            "service",
+            "purposes"
+          ]
+        }
+      },
+      "sensitive": {
+        "type": "boolean"
+      },
+      "spiCat": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "uiSchema": {
+    "version": {
+      "ui:title": "Version",
+      "ui:autofocus": true,
+      "ui:emptyValue": ""
+    },
+    "jurisdiction": {
+      "ui:title": "Jurisdiction",
+      "ui:emptyValue": ""
+    },
+    "consentTimestamp": {
+      "ui:title": "Consent timestamp",
+      "ui:emptyValue": ""
+    },
+    "collectionMethod": {
+      "ui:title": "Collection Method",
+      "ui:emptyValue": ""
+    },
+    "consentReceiptID": {
+      "ui:title": "Consent Receipt ID",
+      "ui:emptyValue": ""
+    },
+    "publicKey": {
+      "ui:title": "Public Key",
+      "ui:emptyValue": "",
+      "ui:widget": "textarea"
+    },
+    "language": {
+      "ui:title": "Language",
+      "ui:emptyValue": ""
+    },
+    "piiPrincipalId": {
+      "ui:title": "PII PrincipalId",
+      "ui:emptyValue": ""
+    },
+    "piiControllers": {
+      "ui:title": "PII Controllers",
+      "items": {
+
+        "piiController": {
+          "ui:title": "PII Controller",
+          "ui:emptyValue": ""
+        },
+        "onBehalf": {},
+        "contact": {
+          "ui:title": "Contact",
+          "ui:emptyValue": ""
+        },
+        "address": {
+          "ui:title": "Address",
+          "ui:emptyValue": ""
+        },
+        "email": {
+          "ui:title": "Email",
+          "ui:emptyValue": ""
+        },
+        "phone": {
+          "ui:title": "Phone",
+          "ui:emptyValue": ""
+        },
+        "piiControllerUrl": {
+          "ui:title": "PII Controller Url",
+          "ui:emptyValue": ""
+        }
+
+      }
+    },
+    "policyUrl": {
+      "ui:title": "Policy Url",
+      "ui:emptyValue": ""
+    },
+    "services": {
+      "ui:title": "Services",
+      "items": {
+
+        "service": {
+          "ui:title": "Service",
+          "ui:emptyValue": ""
+        },
+        "purposes": {
+          "ui:title": "Purposes",
+          "items": {
+
+            "purpose": {
+              "ui:title": "Purpose",
+              "ui:emptyValue": ""
+            },
+            "consentType": {
+              "ui:title": "Consent Type",
+              "ui:emptyValue": ""
+            },
+            "purposeCategory": {
+              "ui:title": "Purpose Category"
+
+            },
+            "piiCategory": {
+              "ui:title": "PII Category"
+
+            },
+            "primaryPurpose": {
+              "ui:title": "Primary Purpose"
+            },
+            "termination": {
+              "ui:title": "Termination",
+              "ui:emptyValue": ""
+            }
+          },
+          "oneOf": [
+            {
+              "properties": {
+                "thirdPartyDisclosure": {
+                  "type": "boolean",
+                  "enum": [
+                    false
+                  ]
+                }
+              },
+              "required": [
+                "thirdPartyDisclosure"
+              ]
+            },
+            {
+              "properties": {
+                "thirdPartyDisclosure": {
+                  "type": "boolean",
+                  "enum": [
+                    true
+                  ]
+                },
+                "thirdPartyName": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "thirdPartyDisclosure",
+                "thirdPartyName"
+              ]
+            }
+          ]
+
+        }
+      }
+    },
+    "sensitive": {
+      "ui:title": "Sensitive"
+    },
+    "spiCat": {
+      "ui:title": "SPI Category"
+    }
+  },
+  "formData": {
+
+  },
+  "defaultProperties": {
+    "jurisdiction": "SI"
+  }
+}
