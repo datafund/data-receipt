@@ -27,13 +27,18 @@ app.post('/api/v1/token', (req, res) => {
 
 function generateJwtRS256(formData) {
     // TODO: read this from formData configuration
-    let options = {
-        issuer: 'issuer',
-        subject: 'subject',
-        audience: 'audience',
-        expiresIn: "12h",
-        algorithm: "RS256"
-    };
+    // let options = {
+    //     issuer: 'issuer',
+    //     subject: 'subject',
+    //     audience: 'audience',
+    //     expiresIn: "12h",
+    //     algorithm: "RS256"
+    // };
+
+    let options = formData.token;
+
+    delete formData.token;
+
 
     let jwtToken = jwt.sign(formData, '-----BEGIN RSA PRIVATE KEY-----\n' +
         'MIIEogIBAAKCAQEAnzyis1ZjfNB0bBgKFMSvvkTtwlvBsaJq7S5wA+kzeVOVpVWw\n' +

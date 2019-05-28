@@ -98,10 +98,13 @@ class App extends Component {
         _this.setState({loadingInProgress: true});
 
         _.each(_this.state.defaultProperties, function (val, key) {
-            if (_this.state.schema.properties[key].default) {
-                delete _this.state.schema.properties[key].default;
+
+            if(_this.state.schema.properties[key]) {
+                if (_this.state.schema.properties[key].default) {
+                    delete _this.state.schema.properties[key].default;
+                }
+                _.assign(_this.state.schema.properties[key], {"default": val});
             }
-            _.assign(_this.state.schema.properties[key], {"default": val});
 
             if (_this.state.formData[key]) {
                 delete _this.state.formData[key];
