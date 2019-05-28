@@ -1,16 +1,8 @@
 import React, {Component} from "react";
 import JSONPretty from "react-json-pretty";
 import _ from "lodash";
-import {
-    NavItem,
-    Nav,
-    TabContent,
-    TabPane,
-    NavLink
-} from 'reactstrap'
 import jwt from "jsonwebtoken";
 import axios from 'axios';
-import classnames from 'classnames';
 import "./ConsentGenerator.css";
 
 export default class ConsentGenerator extends Component {
@@ -18,6 +10,7 @@ export default class ConsentGenerator extends Component {
         super(props);
         this.state = {
             formData: this.props.formData ? this.props.formData : {},
+            APIroot: this.props.APIroot ? this.props.APIroot : 'http://localhost:5000/api/v1/',
             cleanFormData: {},
             algorithmTab: '1',
             privateKey: ''
@@ -74,7 +67,7 @@ export default class ConsentGenerator extends Component {
         console.log("PRIVATE KEY: ", _this.state.privateKey);
         console.log(_this.state.cleanFormData);
 
-        axios.post('http://localhost:5000/api/v1/token', _this.state.cleanFormData, {headers: {}})
+        axios.post(_this.state.APIroot + 'token', _this.state.cleanFormData, {headers: {}})
             .then(function (response) {
                 // TODO: check response type
                 console.log("RESPONSE", response);
@@ -131,18 +124,12 @@ export default class ConsentGenerator extends Component {
     getPublicKey() {
         const _this = this;
 
-        axios.get('http://localhost:5000/api/v1/publicKey', {headers: {}})
+        axios.get(_this.state.APIroot + 'publicKey', {headers: {}})
             .then(function (response) {
-                // TODO: check response type
+
                 console.log("RESPONSE", response);
 
-                alert(response.data.key);
-
                 _this.setState({ formData: { ..._this.state.formData, publicKey: response.data.key} });
-
-                console.log("tole", _this.state.formData);
-                // _this.state.formData.publicKey = response.data.key;
-                // _this.forceUpdate();
             })
             .catch(function (error) {
                 alert("Network error!");
