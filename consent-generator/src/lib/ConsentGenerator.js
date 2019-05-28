@@ -27,6 +27,7 @@ export default class ConsentGenerator extends Component {
         this.decodeJwt = this.decodeJwt.bind(this);
         this.verifyJwtRS256 = this.verifyJwtRS256.bind(this);
         this.onClean = this.onClean.bind(this);
+        this.getPublicKey = this.getPublicKey.bind(this);
 
         console.log(this.props);
         console.log(props);
@@ -127,6 +128,29 @@ export default class ConsentGenerator extends Component {
     }
 
 
+    getPublicKey() {
+        const _this = this;
+
+        axios.get('http://localhost:5000/api/v1/publicKey', {headers: {}})
+            .then(function (response) {
+                // TODO: check response type
+                console.log("RESPONSE", response);
+
+                alert(response.data.key);
+
+                _this.setState({ formData: { ..._this.state.formData, publicKey: response.data.key} });
+
+                console.log("tole", _this.state.formData);
+                // _this.state.formData.publicKey = response.data.key;
+                // _this.forceUpdate();
+            })
+            .catch(function (error) {
+                alert("Network error!");
+                throw error
+            })
+    }
+
+
     render() {
         const _this = this;
 
@@ -193,15 +217,15 @@ export default class ConsentGenerator extends Component {
 
 
                             <div className="form-group"><label
-                                htmlFor="root_version">RSA Public Key</label> <textarea
+                                htmlFor="root_version">RSA Public Key <a className="btn btn-sm btn-secondary ml-4 text-white" onClick={this.getPublicKey}> Get Public Key</a></label> <textarea
                                 className="form-control d-block mb-3"
-                                placeholder="insert private key"
+                                placeholder="insert public key"
                                 rows={10}
                                 onChange={e => {
                                     _this.state.formData.publicKey = e.target.value;
                                     _this.forceUpdate()
                                 }}
-                                defaultValue={_this.state.formData.publicKey}></textarea>
+                                defaultValue={_this.state.formData.publicKey} value={_this.state.formData.publicKey}></textarea>
                             </div>
 
                             <a className="btn btn-success text-white mt-3"
