@@ -3,6 +3,7 @@ import JSONPretty from "react-json-pretty";
 import _ from "lodash";
 import jwt from "jsonwebtoken";
 import axios from 'axios';
+import fileDownload from 'js-file-download';
 import "./ConsentGenerator.css";
 
 export default class ConsentGenerator extends Component {
@@ -11,6 +12,7 @@ export default class ConsentGenerator extends Component {
         this.state = {
             formData: this.props.formData ? this.props.formData : {},
             APIroot: this.props.APIroot ? this.props.APIroot : 'http://localhost:5000/api/v1/',
+            verifyOptions: this.props.verifyOptions ? this.props.verifyOptions : {},
             cleanFormData: {},
             algorithmTab: '1',
             privateKey: ''
@@ -21,6 +23,7 @@ export default class ConsentGenerator extends Component {
         this.verifyJwtRS256 = this.verifyJwtRS256.bind(this);
         this.onClean = this.onClean.bind(this);
         this.getPublicKey = this.getPublicKey.bind(this);
+        this.downloadJwtCrFile = this.downloadJwtCrFile.bind(this);
 
         console.log(this.props);
         console.log(props);
@@ -99,16 +102,8 @@ export default class ConsentGenerator extends Component {
 
         console.log("_this.state.formData.publicKey ", _this.state.formData.publicKey);
 
-        let verifyOptions = {
-            issuer: 'issuer',
-            subject: 'subject',
-            audience: 'audience',
-            expiresIn: "12h",
-            algorithm: "RS256"
-        };
-
         try {
-            let legit = jwt.verify(_this.state.jwtToken, _this.state.formData.publicKey, verifyOptions);
+            let legit = jwt.verify(_this.state.jwtToken, _this.state.formData.publicKey, _this.state.verifyOptions);
 
             _this.setState({
                 signature: legit
@@ -135,6 +130,12 @@ export default class ConsentGenerator extends Component {
                 alert("Network error!");
                 throw error
             })
+    }
+
+    downloadJwtCrFile() {
+        const _this = this;
+
+        fileDownload(_this.state.jwtToken, 'file.JWT.CR');
     }
 
 
@@ -176,6 +177,7 @@ export default class ConsentGenerator extends Component {
                                         <a className="btn btn-success text-white mt-3" onClick={(e) => {
                                             _this.decodeJwt()
                                         }}><i className="fas fa-certificate"></i> Decode JWT</a><br/>
+
                                     </div>
                                 </div>
                             }
@@ -195,6 +197,8 @@ export default class ConsentGenerator extends Component {
                                         json={this.state.jwtTokenDecoded}
                                         themeClassName="json-pretty"></JSONPretty>
 
+
+                                    <a className="btn btn-secondary mt-2 text-white" onClick={this.downloadJwtCrFile}> Download JWT.CR</a>
                                 </div>
 
 
