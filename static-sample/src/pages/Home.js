@@ -1,4 +1,10 @@
-import React, {Component} from 'react';
+/**
+ * Datafund Consent generator & viewer 
+ * Licensed under the MIT license 
+ * Created by Markus Zevnik, Tadej Fius, Èrt Ahlin 
+ */
+
+import React, { Component } from 'react';
 import {
     Collapse,
     Navbar,
@@ -13,6 +19,7 @@ import {
     TabPane,
     NavLink
 } from 'reactstrap'
+
 import {Link} from 'react-router-dom'
 import logo from '../images/logo_black_alt.svg';
 import Form from "react-jsonschema-form-bs4";

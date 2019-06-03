@@ -1,4 +1,10 @@
-import React, {Component} from "react";
+/**
+ * Datafund Consent generator & viewer 
+ * Licensed under the MIT license 
+ * Created by Markus Zevnik, Tadej Fius, Èrt Ahlin 
+ */
+
+import React, { Component } from "react";
 import JSONPretty from "react-json-pretty";
 import _ from "lodash";
 import jwt from "jsonwebtoken";

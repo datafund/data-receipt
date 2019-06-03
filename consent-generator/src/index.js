@@ -1,3 +1,9 @@
+/**
+ * Datafund Consent generator & viewer 
+ * Licensed under the MIT license 
+ * Created by Markus Zevnik, Tadej Fius, Èrt Ahlin 
+ */
+
 import React from 'react';
 import { render } from "react-dom";
 import { ConsentGenerator } from "./lib";
