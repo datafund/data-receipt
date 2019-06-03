@@ -64,7 +64,9 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null, !_lodash.default.isEmpty(this.state.data) && _react.default.createElement(_reactJsonToHtml.JsonTable, {
+      return _react.default.createElement("div", {
+        className: "consentViewerContainer"
+      }, !_lodash.default.isEmpty(this.state.data) && _react.default.createElement(_reactJsonToHtml.JsonTable, {
         json: this.state.data
       }), _lodash.default.isEmpty(this.state.data) && _react.default.createElement("em", null, "Cosent Recepeit data not available."));
     }

@@ -24,7 +24,7 @@ export default class ConsentViewer extends Component {
     render() {
 
         return (
-            <div>
+            <div className="consentViewerContainer">
                 {!_.isEmpty(this.state.data) &&
                 <JsonTable json={this.state.data}/>
                 }
