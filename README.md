@@ -24,10 +24,11 @@ Building upon the [React JSONSchema framework](https://mozilla-services.github.i
 ![image](https://user-images.githubusercontent.com/1554520/59093196-a230c580-8913-11e9-9a45-254204574f73.png)
 
 Packages:
-- consent generator package
-- consent viewer package
-- consent summary view package
+- consent receipt generator package
+- consent receipt viewer package
+- consent receipt summary viewer package
 - API server package
+
 
 ### Design guidelines 
 ### References 
@@ -38,28 +39,44 @@ Packages:
 
 ### 
 
-## CONSENT GENERATOR PACKAGE
+## CONSENT RECEIPT GENERATOR PACKAGE
 ### Overview
+
+Consent receipt generator package contains a graphical user interface to edit the JSONSchema, UISchema and formData parts of the consent receipt. A configuration can be exported as a project file, that contains all three components and can be used in the later process. It is meant to be used by the data user (PII Controller).
+
 ### Installation instructions 
 ### Sample usage
 
-## CONSENT VIEWER PACKAGE
+## CONSENT RECEIPT VIEWER PACKAGE
 ### Overview
+
+Consent receipt viewer package contains a graphical user interface to view a proposed consent receipt or an already accepted consent receipt. It is meant to be used by the individual (PII Principal).
+
 ### Installation instructions 
 ### Sample usage
 
-## CONSENT SUMMARY PACKAGE 
+## CONSENT RECEIPT SUMMARY VIEWER PACKAGE 
 ### Overview
+
+Consent receipt summary viewer package contains graphical user interface to view summary information from a number of consent receipts in some storage. It is meant to be used by the individual (PII Principal). 
+
 ### Installation instructions 
 ### Sample usage
 
 ## API SERVER IMPLEMENTATION 
 ### Overview
+
+API server implementation is an example of a server for signing a proposed consent receipt and making it into a consent receipt JWT. 
+**NOTE: It is not meant to be used in a production environemnt as-is, as it should not be considered secured enough. Consider it a reference implementation.**
+
 ### Installation instructions 
 ### API endpoints 
 
 ## SAMPLE EDITOR VIEWER
 ### Overview
+
+Sample editor viewer is a reference implementation of all the modules budled into one application. It is meant for reference and for demos.
+
 ### Installation instructions 
 
 ## FDS.JS INTEGRATION SAMPLE 
