@@ -44,24 +44,21 @@ Packages:
 
 Consent receipt generator package contains a graphical user interface to edit the JSONSchema, UISchema and formData parts of the consent receipt. A configuration can be exported as a project file, that contains all three components and can be used in the later process. It is meant to be used by the data user (PII Controller).
 
-### Installation instructions 
-### Sample usage
+Available at: <https://github.com/datafund/dr-generator>
 
 ## CONSENT RECEIPT VIEWER PACKAGE
 ### Overview
 
 Consent receipt viewer package contains a graphical user interface to view a proposed consent receipt or an already accepted consent receipt. It is meant to be used by the individual (PII Principal).
 
-### Installation instructions 
-### Sample usage
+Available at: <https://github.com/datafund/dr-viewer>
 
 ## CONSENT RECEIPT SUMMARY VIEWER PACKAGE 
 ### Overview
 
 Consent receipt summary viewer package contains graphical user interface to view summary information from a number of consent receipts in some storage. It is meant to be used by the individual (PII Principal). 
 
-### Installation instructions 
-### Sample usage
+Available at: <https://github.com/datafund/dr-summary>
 
 ## API SERVER IMPLEMENTATION 
 ### Overview
@@ -69,23 +66,26 @@ Consent receipt summary viewer package contains graphical user interface to view
 API server implementation is an example of a server for signing a proposed consent receipt and making it into a consent receipt JWT. 
 **NOTE: It is not meant to be used in a production environemnt as-is, as it should not be considered secured enough. Consider it a reference implementation.**
 
-### Installation instructions 
-### API endpoints 
+Available at: <https://github.com/datafund/dr-api-server>
 
 ## SAMPLE EDITOR VIEWER
 ### Overview
 
 Sample editor viewer is a reference implementation of all the modules budled into one application. It is meant for reference and for demos.
 
-### Installation instructions 
+Available at: <https://github.com/datafund/dr-editor-sample>
 
 ## FDS.JS INTEGRATION SAMPLE 
 
+Upcoming ...
+
 ## FAIRDROP INTEGRATION
-### References 
+Upcoming ...
 
-## RECLAIM INTEGRATION *
+## RECLAIM INTEGRATION
 
+Upcoming ...
 
+## 
 
 
