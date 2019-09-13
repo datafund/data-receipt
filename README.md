@@ -23,6 +23,8 @@ Building upon the [React JSONSchema framework](https://mozilla-services.github.i
 
 ![image](https://user-images.githubusercontent.com/1554520/59093196-a230c580-8913-11e9-9a45-254204574f73.png)
 
+All the parts are saved in the form of a JSON project file, that can be used as a template.
+
 Packages:
 - consent receipt generator package
 - consent receipt viewer package
