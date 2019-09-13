@@ -39,31 +39,25 @@ Packages:
 - [CR v1.1 JSONSchema version](https://kantarainitiative.org/confluence/download/attachments/76447870/CR%20Schema%20v1_1_0%20DRAFT%206.json?version=2&modificationDate=1511151073000&api=v2)
 - See [react-jsonschema-form](https://mozilla-services.github.io/react-jsonschema-form/) for reference about using JSONSchema, UISchema, formData
 
-### 
-
 ## CONSENT RECEIPT GENERATOR PACKAGE
-### Overview
 
 Consent receipt generator package contains a graphical user interface to edit the JSONSchema, UISchema and formData parts of the consent receipt. A configuration can be exported as a project file, that contains all three components and can be used in the later process. It is meant to be used by the data user (PII Controller).
 
 Available at: <https://github.com/datafund/dr-generator>
 
 ## CONSENT RECEIPT VIEWER PACKAGE
-### Overview
 
 Consent receipt viewer package contains a graphical user interface to view a proposed consent receipt or an already accepted consent receipt. It is meant to be used by the individual (PII Principal).
 
 Available at: <https://github.com/datafund/dr-viewer>
 
 ## CONSENT RECEIPT SUMMARY VIEWER PACKAGE 
-### Overview
 
 Consent receipt summary viewer package contains graphical user interface to view summary information from a number of consent receipts in some storage. It is meant to be used by the individual (PII Principal). 
 
 Available at: <https://github.com/datafund/dr-summary>
 
 ## API SERVER IMPLEMENTATION 
-### Overview
 
 API server implementation is an example of a server for signing a proposed consent receipt and making it into a consent receipt JWT. 
 **NOTE: It is not meant to be used in a production environemnt as-is, as it should not be considered secured enough. Consider it a reference implementation.**
@@ -71,7 +65,6 @@ API server implementation is an example of a server for signing a proposed conse
 Available at: <https://github.com/datafund/dr-api-server>
 
 ## SAMPLE EDITOR VIEWER
-### Overview
 
 Sample editor viewer is a reference implementation of all the modules budled into one application. It is meant for reference and for demos.
 
@@ -79,15 +72,13 @@ Available at: <https://github.com/datafund/dr-editor-sample>
 
 ## FDS.JS INTEGRATION SAMPLE 
 
-Upcoming ...
+Implementation of how to send your consents securely to other FDS users.
+
+Available at: <https://github.com/datafund/df-fds-consent-manager>
 
 ## FAIRDROP INTEGRATION
 Upcoming ...
 
-## RECLAIM INTEGRATION
 
-Upcoming ...
-
-## 
 
 
