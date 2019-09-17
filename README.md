@@ -1,4 +1,4 @@
-# CONSENT RECEIPT PROJECT 
+# CONSENT RECEIPT SUITE 
 ### Overview 
 
 Personally identifiable information (PII) is exchanged by different parties for different uses. E.g., retail shops need PII to target consumers with more specific offers; hospitals need PII to treat their patients etc.
